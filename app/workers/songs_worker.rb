@@ -1,6 +1,6 @@
 class SongsWorker
   require 'csv'
-  include SideKiq::Worker
+  include Sidekiq::Worker
 
   def perform(songs_file)
     CSV.foreach(songs_file, headers: true) do |lead|
