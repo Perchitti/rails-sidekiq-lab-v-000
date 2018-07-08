@@ -27,7 +27,6 @@ class SongsController < ApplicationController
     SongsWorker.perform_async(params[:leads].path)
     redirect_to songs_path
   end
-end
 
   def edit
     @song = Song.find(params[:id])
