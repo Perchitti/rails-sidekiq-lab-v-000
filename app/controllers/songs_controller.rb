@@ -27,6 +27,7 @@ class SongsController < ApplicationController
     SongsWorker.perform_async(params[:leads].path)
     redirect_to songs_path
   end
+end
 
   def edit
     @song = Song.find(params[:id])
@@ -57,4 +58,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
